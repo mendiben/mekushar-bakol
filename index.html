@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מקושר בכל 15 · הכנס השנתי למשפחת ליובאוויטש</title>
+<meta name="description" content="מקושר בכל 15 — הכנס השנתי למשפחת ליובאוויטש. יום שלישי ז׳ מנחם־אב (21.7), מרכז הכנסים הבינלאומי אשקלון. יום שלם של חיזוק המשפחה, החינוך וההתקשרות. להרשמה כאן.">
+<meta name="theme-color" content="#378C8F">
+
+<!-- Open Graph / WhatsApp share. NOTE: replace the two og:*url values below with your absolute production URL before deploying (WhatsApp requires absolute URLs for the preview image). -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מקושר בכל">
+<meta property="og:title" content="מקושר בכל 15 · הכנס השנתי למשפחת ליובאוויטש">
+<meta property="og:description" content="יום שלישי ז׳ מנחם־אב (21.7) · מרכז הכנסים הבינלאומי אשקלון · הכח לשנות נמצא בידיים שלך. להרשמה עכשיו.">
+<meta property="og:image" content="assets/brand/logo-main.png">
+<meta property="og:locale" content="he_IL">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/png" href="assets/brand/logo-transparent.png">
+<link rel="apple-touch-icon" href="assets/brand/logo-transparent.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+  *{box-sizing:border-box}
+  html{scroll-padding-top:70px}
+  body{margin:0;background:#fff;font-family:'Heebo',system-ui,sans-serif;color:#14383C;-webkit-font-smoothing:antialiased;overflow-x:clip;position:relative}
+  a{color:#D96524;text-decoration:none}
+  a:hover{color:#E17937}
+  ::selection{background:#9AC7C3;color:#14383C}
+  :focus-visible{outline:3px solid #D96524;outline-offset:2px;border-radius:6px}
+  img{max-width:100%}
+
+  @keyframes mkRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:no-preference){
+    html{scroll-behavior:smooth}
+    .mk-rise{opacity:0;animation:mkRise .6s cubic-bezier(.2,.7,.2,1) forwards}
+    @supports (animation-timeline: view){
+      [data-reveal]{opacity:0;animation:mkRise .7s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 0% cover 22%}
+    }
+  }
+
+  .mk-scroll::-webkit-scrollbar{height:6px}
+  .mk-scroll::-webkit-scrollbar-thumb{background:#9AC7C3;border-radius:99px}
+  .mk-navlink{display:none}
+  @media(min-width:860px){.mk-navlink{display:inline}}
+  @media(min-width:880px){.mk-about-grid{grid-template-columns:minmax(0,1.7fr) minmax(0,.95fr)!important}}
+  .mk-block{display:flex;flex-direction:column;gap:6px}
+  @media(min-width:880px){.mk-block{flex-direction:row;gap:22px;align-items:flex-start}}
+  .mk-numwrap{flex:none}
+  @media(min-width:880px){.mk-numwrap{position:sticky;top:66px;width:195px;text-align:center}}
+  .mk-cards{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;flex:1;min-width:0}
+  @media(min-width:760px){.mk-cards-multi{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+  @media(min-width:1240px){.mk-cards-multi{grid-template-columns:repeat(4,minmax(0,1fr))}}
+  .mk-speakers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  @media(min-width:620px){.mk-speakers{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  @media(min-width:980px){.mk-speakers{grid-template-columns:repeat(5,minmax(0,1fr))}}
+  .mk-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  @media(min-width:760px){.mk-gallery{grid-template-columns:repeat(4,minmax(0,1fr))}}
+  .mk-2col{display:grid;grid-template-columns:minmax(0,1fr);gap:22px}
+  @media(min-width:820px){.mk-2col{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+  .mk-3col{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+  @media(min-width:720px){.mk-3col{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  .mk-sticky-cta{position:fixed;inset-inline:0;bottom:0;z-index:55;transform:translateY(130%);transition:transform .38s cubic-bezier(.2,.7,.2,1)}
+  .mk-sticky-cta.mk-show{transform:none}
+  @media(min-width:820px){.mk-sticky-cta{display:none!important}}
+
+  /* Loading / error states */
+  #mk-boot{min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;padding:40px 20px;color:#14383C}
+  #mk-boot .mk-spin{width:44px;height:44px;border-radius:99px;border:4px solid #DDF1F0;border-top-color:#378C8F;animation:mkspin 1s linear infinite}
+  @keyframes mkspin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){#mk-boot .mk-spin{animation:none}}
+  #mk-boot code{background:#14383C;color:#F7E6C9;padding:3px 8px;border-radius:6px;font-size:14px;direction:ltr;display:inline-block}
+</style>
+</head>
+<body>
+
+<div aria-label="בסייעתא דשמיא" style="position:fixed;top:6px;inset-inline-start:14px;z-index:60;font-family:'Secular One','Heebo';font-weight:700;font-size:13px;color:#14383C;opacity:.72;letter-spacing:.02em;pointer-events:none">ב״ה</div>
+
+<main id="app">
+  <div id="mk-boot">
+    <div class="mk-spin" role="status" aria-label="טוען"></div>
+    <div style="font-weight:700;font-size:17px">טוען את התוכנית…</div>
+    <noscript><div style="font-weight:500;font-size:15px;max-width:520px;line-height:1.7">האתר טוען את התוכן באמצעות JavaScript. יש להפעיל JavaScript בדפדפן כדי לצפות בעמוד.</div></noscript>
+  </div>
+</main>
+
+<script>
+(function () {
+  'use strict';
+
+  var DATA_URL = 'data/event.json';
+
+  /* ---------- helpers ---------- */
+  function esc(s) {
+    if (s === null || s === undefined) return '';
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function pad(n) { return String(n).padStart(2, '0'); }
+  function byId(list, id) { for (var i = 0; i < list.length; i++) if (list[i].id === id) return list[i]; return null; }
+
+  function initials(name) {
+    var strip = ['הרה״ח', 'הרב פרופ׳', 'הרב', 'הרה', 'ר׳', 'מר', 'תא״ל', '(מיל׳)', 'פרופ׳', 'צוות', 'הרב פרופ'];
+    var s = (name || '').trim();
+    strip.forEach(function (w) { if (s.indexOf(w) === 0) s = s.slice(w.length).trim(); });
+    s = s.replace(/[׳״'"()]/g, '').trim();
+    return s.charAt(0) || '•';
+  }
+
+  function mapsUrl(D) { var c = D.event.venue.coordinates; return 'https://www.google.com/maps/search/?api=1&query=' + c.lat + ',' + c.lng; }
+  function wazeUrl(D) { var c = D.event.venue.coordinates; return 'https://waze.com/ul?ll=' + c.lat + ',' + c.lng + '&navigate=yes'; }
+
+  function downloadICS(D) {
+    var ics = [
+      'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//mekushar-bakol//15//HE', 'CALSCALE:GREGORIAN', 'BEGIN:VEVENT',
+      'UID:mekushar-bakol-15@hisachdus.co.il',
+      'DTSTAMP:20260709T000000Z',
+      'DTSTART;TZID=Asia/Jerusalem:20260721T100000',
+      'DTEND;TZID=Asia/Jerusalem:20260721T200000',
+      'SUMMARY:מקושר בכל 15 — הכנס השנתי למשפחת ליובאוויטש',
+      'LOCATION:מרכז הכנסים הבינלאומי\\, יצחק בן צבי 12\\, אשקלון',
+      'URL:' + D.event.registration.tickets_url,
+      'END:VEVENT', 'END:VCALENDAR'
+    ].join('\r\n');
+    var blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = 'mekushar-bakol-15.ics';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(a.href); }, 1500);
+  }
+
+  function shapeSession(D, s, numeralColor) {
+    var sp = s.speaker_id ? byId(D.speakers, s.speaker_id) : null;
+    var hall = s.hall_id ? byId(D.halls, s.hall_id) : null;
+    var track = s.track_id ? byId(D.tracks, s.track_id) : null;
+    var tag = [track ? track.name : null, s.audience || null].filter(Boolean).join(' · ');
+    return {
+      id: s.id, title: s.title, subtitle: s.subtitle || '',
+      speakerName: sp ? sp.name : '', speakerBio: sp ? sp.bio : '',
+      photo: sp ? sp.photo : null, hasPhoto: !!(sp && sp.photo), hasSpeaker: !!sp,
+      showInitials: !!sp && !sp.photo, initials: sp ? initials(sp.name) : '',
+      hallName: hall ? hall.name : '', hasHall: !!hall,
+      tag: tag, hasTag: !!tag,
+      hasWorkshopNote: !!s.workshop_note, workshopNote: s.workshop_note || '',
+      accent: numeralColor
+    };
+  }
+
+  /* ---------- section renderers (mirror the approved design) ---------- */
+
+  function renderHeader(D) {
+    var nav = D.site.suggested_nav.map(function (n) {
+      return '<a href="#' + esc(n.id) + '" class="mk-navlink" style="font-weight:500;font-size:15px;color:#14383C;opacity:.7">' + esc(n.label) + '</a>';
+    }).join('');
+    return '' +
+    '<header style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(20,56,60,.08)">' +
+      '<div style="max-width:1180px;margin:0 auto;padding:11px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px">' +
+        '<a href="#hero" style="display:flex;align-items:baseline;gap:7px;color:#14383C" aria-label="מקושר בכל — לראש העמוד">' +
+          '<span style="font-family:\'Secular One\';font-size:21px;letter-spacing:-.01em">מקושר בכל</span>' +
+          '<span style="font-family:\'Secular One\';font-size:16px;color:#D96524">15</span>' +
+        '</a>' +
+        '<nav style="display:flex;align-items:center;gap:22px">' + nav +
+          '<a href="' + esc(D.event.registration.tickets_url) + '" target="_blank" rel="noopener" style="background:#D96524;color:#fff;font-weight:800;font-size:15px;padding:9px 20px;border-radius:99px;white-space:nowrap;box-shadow:0 2px 10px rgba(217,101,36,.28)">' + esc(D.event.registration.cta_label) + '</a>' +
+        '</nav>' +
+      '</div>' +
+    '</header>';
+  }
+
+  function renderHero(D) {
+    var E = D.event;
+    var hy = byId(D.quotes, 'hayom-yom');
+    var dateParts = E.date.display.split(' / ').map(function (p) {
+      return '<span style="background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);padding:9px 18px;border-radius:99px;font-family:\'Secular One\';font-size:clamp(16px,3.6vw,22px);white-space:nowrap">' + esc(p) + '</span>';
+    }).join('');
+    var hoursRange = E.hours.main_start + '–' + E.hours.end;
+
+    return '' +
+    '<section id="hero" style="position:relative;background:linear-gradient(160deg,#378C8F 0%,#48A4AB 62%,#5FB1B0 100%);color:#fff;overflow:hidden">' +
+      '<img src="assets/brand/watercolor-tree-1.png" alt="" aria-hidden="true" style="position:absolute;bottom:-20px;inset-inline-start:-70px;width:min(46vw,360px);opacity:.5;pointer-events:none;filter:saturate(.85)">' +
+      '<img src="assets/brand/watercolor-tree-2.png" alt="" aria-hidden="true" style="position:absolute;top:40px;inset-inline-end:-90px;width:min(40vw,300px);opacity:.34;pointer-events:none">' +
+      '<div style="position:relative;max-width:1180px;margin:0 auto;padding:46px 20px 62px;display:flex;flex-direction:column;align-items:center;text-align:center">' +
+        '<div class="mk-rise" id="mk-logo-card" style="animation-delay:.02s;background:#fff;border-radius:26px;padding:14px;box-shadow:0 22px 60px rgba(6,40,42,.28);width:min(78vw,240px)">' +
+          '<img src="assets/brand/logo-main.png" alt="לוגו מקושר בכל" style="width:100%;height:auto;display:block;border-radius:14px">' +
+        '</div>' +
+        '<div class="mk-rise" style="animation-delay:.12s;margin-top:26px;display:flex;align-items:center;justify-content:center;gap:min(3vw,18px)">' +
+          '<h1 style="margin:0;font-family:\'Secular One\';font-weight:400;font-size:clamp(46px,13vw,104px);line-height:.92;letter-spacing:-.02em;text-shadow:0 3px 18px rgba(6,40,42,.25)">מקושר בכל</h1>' +
+          '<span style="font-family:\'Secular One\';font-size:clamp(66px,20vw,168px);line-height:.8;color:#F7E6C9;text-shadow:0 4px 22px rgba(6,40,42,.3)">15</span>' +
+        '</div>' +
+        '<p class="mk-rise" style="animation-delay:.2s;margin:14px 0 0;font-weight:500;font-size:clamp(17px,3.6vw,22px);opacity:.94;max-width:640px">' + esc(E.subtitle) + '</p>' +
+        '<p class="mk-rise" style="animation-delay:.24s;margin:6px 0 0;font-family:\'Secular One\';font-size:clamp(18px,4vw,26px);color:#F7E6C9">' + esc(E.campaign_tagline) + '</p>' +
+        '<div class="mk-rise" style="animation-delay:.32s;margin-top:26px;display:flex;flex-wrap:wrap;justify-content:center;gap:10px">' + dateParts + '</div>' +
+        '<a href="' + esc(mapsUrl(D)) + '" target="_blank" rel="noopener" class="mk-rise" style="animation-delay:.36s;margin-top:16px;color:#fff;font-weight:500;font-size:15.5px;opacity:.92;display:inline-flex;align-items:center;gap:7px;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:2px">' +
+          '<span aria-hidden="true" style="width:9px;height:9px;border-radius:99px;background:#F7E6C9;display:inline-block;flex:none"></span><span>' + esc(E.venue.name) + ' · ' + esc(E.venue.city) + ' · ' + esc(hoursRange) + '</span>' +
+        '</a>' +
+        '<div class="mk-rise" id="mk-countdown" style="animation-delay:.44s;margin-top:30px"></div>' +
+        '<a href="' + esc(E.registration.tickets_url) + '" target="_blank" rel="noopener" class="mk-rise" style="animation-delay:.52s;margin-top:26px;background:#D96524;color:#fff;font-weight:800;font-size:20px;padding:16px 46px;border-radius:99px;box-shadow:0 14px 34px rgba(180,70,20,.42);display:inline-flex;align-items:center;gap:10px">' + esc(E.registration.cta_label) + ' <span style="font-size:16px;opacity:.85">←</span></a>' +
+        '<button type="button" data-action="ics" style="margin-top:12px;background:transparent;border:0;color:#F7E6C9;font-family:\'Heebo\';font-weight:500;font-size:14px;cursor:pointer;opacity:.9;text-decoration:underline;text-underline-offset:3px">הוספה ליומן (ICS)</button>' +
+      '</div>' +
+      '<div style="position:relative;background:linear-gradient(180deg,rgba(6,40,42,0) 0%,rgba(6,40,42,.22) 100%);padding:0 20px 54px">' +
+        '<div data-reveal style="max-width:900px;margin:0 auto;background:#F7E6C9;color:#14383C;border-radius:22px;overflow:hidden;display:flex;flex-wrap:wrap;box-shadow:0 22px 60px rgba(6,40,42,.32)">' +
+          '<div style="flex:1 1 200px;min-width:180px;background:#14383C">' +
+            '<img src="assets/brand/rebbe-cover.png" alt="דיוקן כ״ק אדמו״ר מלך המשיח שליט״א" style="width:100%;height:100%;min-height:260px;object-fit:cover;object-position:center top;display:block">' +
+          '</div>' +
+          '<div style="flex:2 1 340px;padding:30px 30px 32px;display:flex;flex-direction:column;justify-content:center">' +
+            '<div style="font-family:\'Secular One\';font-size:13px;color:#D96524;letter-spacing:.04em">' + esc(hy.source) + '</div>' +
+            '<p style="margin:12px 0 0;font-size:clamp(18px,3.4vw,23px);line-height:1.62;font-weight:500">' + esc(hy.text) + '</p>' +
+            '<div style="margin-top:16px;font-family:\'Secular One\';font-size:clamp(19px,3.6vw,26px);color:#378C8F">' + esc(hy.highlight || 'מקושר בכל: הולך חסיד, אוכל חסיד, ישן חסיד') + '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+    '</section>';
+  }
+
+  function renderCountdownInner(D, now) {
+    var target = new Date(D.site.countdown_target).getTime();
+    var endTime = new Date(D.site.event_end || '2026-07-21T20:00:00+03:00').getTime();
+    var diff = target - now;
+    if (diff > 0) {
+      var days = Math.max(0, Math.floor(diff / 86400000));
+      var hours = Math.max(0, Math.floor((diff % 86400000) / 3600000));
+      var mins = Math.max(0, Math.floor((diff % 3600000) / 60000));
+      var cells = [
+        { value: days, label: 'ימים' },
+        { value: pad(hours), label: 'שעות' },
+        { value: pad(mins), label: 'דקות' }
+      ].map(function (c) {
+        return '<div style="background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:16px;padding:12px 6px;width:78px">' +
+          '<div style="font-family:\'Secular One\';font-size:40px;line-height:1;color:#fff">' + esc(c.value) + '</div>' +
+          '<div style="font-size:12.5px;font-weight:500;opacity:.82;margin-top:5px">' + esc(c.label) + '</div>' +
+        '</div>';
+      }).join('');
+      return '<div><div style="display:flex;gap:10px;justify-content:center">' + cells + '</div>' +
+        '<div style="margin-top:9px;font-size:13.5px;opacity:.8;font-weight:500">עד פתיחת הכנס</div></div>';
+    }
+    if (now < endTime) {
+      return '<div style="font-family:\'Secular One\';font-size:26px;color:#F7E6C9">הכנס בעיצומו!</div>';
+    }
+    return '<div style="font-family:\'Secular One\';font-size:22px;color:#F7E6C9">תודה שהשתתפתם!</div>' +
+      '<div style="margin-top:6px;font-size:14px;opacity:.85"><a href="' + esc(D.event.registration.info_site) + '" target="_blank" rel="noopener" style="color:#fff;border-bottom:1px solid rgba(255,255,255,.5)">ההרצאות עולות לאתר ההתאחדות ←</a></div>';
+  }
+
+  function renderAbout(D) {
+    var A = D.about;
+    var author = byId(D.speakers, A.author_id);
+    var paras = A.paragraphs.map(function (p) {
+      return '<p data-reveal style="margin:0 0 16px;font-size:clamp(16px,2.4vw,18.5px);line-height:1.78;color:#14383C;opacity:.92;text-wrap:pretty">' + esc(p) + '</p>';
+    }).join('');
+    var authorPhoto = (author && author.photo)
+      ? '<img src="' + esc(author.photo) + '" alt="' + esc(author.name) + '" style="width:64px;height:64px;border-radius:99px;object-fit:cover;border:2px solid #9AC7C3;flex:none">'
+      : '';
+    return '' +
+    '<section id="about" style="position:relative;background:#DDF1F0;padding:64px 20px 70px;overflow:hidden">' +
+      '<div style="max-width:1080px;margin:0 auto">' +
+        '<div data-reveal style="display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid rgba(20,56,60,.1);padding:7px 16px;border-radius:99px;font-weight:700;font-size:13.5px;color:#378C8F">' +
+          '<span style="width:8px;height:8px;border-radius:99px;background:#D96524;display:inline-block"></span>' + esc(A.badge) +
+        '</div>' +
+        '<h2 data-reveal style="margin:16px 0 0;font-family:\'Secular One\';font-weight:400;font-size:clamp(34px,8vw,64px);line-height:1;color:#14383C">' + esc(A.section_title) + '</h2>' +
+        '<div style="margin-top:28px;display:grid;grid-template-columns:1fr;gap:34px;align-items:start" class="mk-about-grid">' +
+          '<div>' + paras + '</div>' +
+          '<aside data-reveal style="background:#fff;border-radius:20px;padding:24px;box-shadow:0 12px 34px rgba(6,40,42,.1);position:sticky;top:84px">' +
+            '<div style="display:flex;align-items:center;gap:14px">' + authorPhoto +
+              '<div>' +
+                '<div style="font-weight:800;font-size:16px">' + esc(author ? author.name : '') + '</div>' +
+                '<div style="font-size:13px;opacity:.66;font-weight:500;line-height:1.4">' + esc(author ? author.bio : '') + '</div>' +
+              '</div>' +
+            '</div>' +
+            '<div style="margin-top:22px;padding-top:20px;border-top:1px solid rgba(20,56,60,.1);text-align:center">' +
+              '<div style="font-family:\'Secular One\';font-size:52px;line-height:.9;color:#D96524">+1,000</div>' +
+              '<div style="font-size:14px;font-weight:500;opacity:.75;margin-top:6px">' + esc(D.event.attendance_note) + '</div>' +
+            '</div>' +
+          '</aside>' +
+        '</div>' +
+      '</div>' +
+    '</section>';
+  }
+
+  function renderTracks(D) {
+    var chips = D.tracks.map(function (t, i) {
+      return '<a href="#schedule" style="scroll-snap-align:start;flex:none;background:#DDF1F0;border:1px solid rgba(55,140,143,.22);color:#14383C;font-weight:700;font-size:16px;padding:13px 22px;border-radius:14px;white-space:nowrap;display:inline-flex;align-items:center;gap:9px">' +
+        '<span style="font-family:\'Secular One\';font-size:13px;color:#48A4AB">' + esc(pad(i + 1)) + '</span>' + esc(t.name) +
+      '</a>';
+    }).join('');
+    return '' +
+    '<section id="tracks" style="background:#fff;padding:52px 0 30px">' +
+      '<div style="max-width:1080px;margin:0 auto;padding:0 20px">' +
+        '<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap">' +
+          '<h2 data-reveal style="margin:0;font-family:\'Secular One\';font-weight:400;font-size:clamp(28px,6vw,46px);color:#14383C">מסלול משנה חיים!</h2>' +
+          '<span data-reveal style="font-weight:500;font-size:14.5px;opacity:.6">9 מסלולי תוכן · 6 אולמות במקביל</span>' +
+        '</div>' +
+      '</div>' +
+      '<div class="mk-scroll" style="margin-top:22px;display:flex;gap:12px;overflow-x:auto;padding:6px 20px 20px;scroll-snap-type:x mandatory">' + chips + '</div>' +
+    '</section>';
+  }
+
+  function renderSessionCard(s) {
+    var avatar;
+    if (s.hasPhoto) {
+      avatar = '<img src="' + esc(s.photo) + '" alt="' + esc(s.speakerName) + '" loading="lazy" style="width:58px;height:58px;border-radius:99px;object-fit:cover;object-position:top;border:2px solid #DDF1F0;flex:none">';
+    } else if (s.showInitials) {
+      avatar = '<div aria-hidden="true" style="width:58px;height:58px;border-radius:99px;background:#378C8F;color:#fff;display:flex;align-items:center;justify-content:center;font-family:\'Secular One\';font-size:24px;flex:none">' + esc(s.initials) + '</div>';
+    } else {
+      avatar = '';
+    }
+    var speakerName = s.hasSpeaker ? '<div style="font-weight:700;font-size:14px;margin-top:3px">' + esc(s.speakerName) + '</div>' : '';
+    var speakerBio = s.speakerBio ? '<div style="font-size:12px;opacity:.6;line-height:1.4">' + esc(s.speakerBio) + '</div>' : '';
+    var hall = s.hasHall ? '<span style="align-self:flex-start;background:#9AC7C3;color:#0f2f32;font-weight:700;font-size:11.5px;padding:5px 11px;border-radius:99px;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis">' + esc(s.hallName) + '</span>' : '';
+    var subtitle = s.subtitle ? '<p style="margin:0;font-size:14px;line-height:1.5;opacity:.86;text-wrap:pretty">' + esc(s.subtitle) + '</p>' : '';
+    var tag = s.hasTag ? '<div style="margin-top:auto;font-size:12px;font-weight:700;color:#14383C;opacity:.55">' + esc(s.tag) + '</div>' : '';
+    var note = s.hasWorkshopNote ? '<div style="background:#FBEEE2;border:1px solid rgba(217,101,36,.28);border-radius:12px;padding:11px 13px;font-size:12.5px;line-height:1.5;color:#8a3d12"><strong style="color:#D96524">שים לב · </strong>' + esc(s.workshopNote) + '</div>' : '';
+    return '' +
+    '<article data-reveal style="background:#fff;border:1px solid rgba(20,56,60,.1);border-radius:18px;padding:17px;box-shadow:0 8px 24px rgba(6,40,42,.06);display:flex;flex-direction:column;gap:11px;height:100%">' +
+      hall +
+      '<div style="display:flex;align-items:flex-start;gap:12px">' + avatar +
+        '<div style="flex:1;min-width:0">' +
+          '<h3 style="margin:0;font-family:\'Secular One\';font-weight:400;font-size:18px;line-height:1.16;color:' + esc(s.accent) + ';text-wrap:balance" dir="rtl">' + esc(s.title) + '</h3>' + speakerName + speakerBio +
+        '</div>' +
+      '</div>' + subtitle + tag + note +
+    '</article>';
+  }
+
+  function renderKeynote(D, blk) {
+    var s = blk.keynoteSession;
+    var azaria = byId(D.quotes, 'azaria-magazine');
+    var quote = azaria ? ('<blockquote style="margin:20px 0 0;padding-inline-start:16px;border-inline-start:3px solid #D96524;font-size:15.5px;line-height:1.62;opacity:.96">' + esc(azaria.text) +
+      '<cite style="display:block;margin-top:8px;font-size:12.5px;opacity:.72;font-style:normal">— ' + esc(azaria.source) + '</cite></blockquote>') : '';
+    var photo = s.hasPhoto ? '<img src="' + esc(s.photo) + '" alt="' + esc(s.speakerName) + '" loading="lazy" style="width:84px;height:84px;border-radius:99px;object-fit:cover;object-position:top;border:3px solid rgba(247,230,201,.6);flex:none">' : '';
+    return '' +
+    '<div data-reveal style="position:relative;border-radius:24px;overflow:hidden;background:#14383C;color:#fff;box-shadow:0 22px 54px rgba(6,40,42,.32)">' +
+      '<img src="assets/brand/audience-crowd.jpg" alt="" aria-hidden="true" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.3">' +
+      '<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,56,60,.55),rgba(55,140,143,.9))"></div>' +
+      '<div style="position:relative;padding:30px 24px 32px">' +
+        '<div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">' +
+          '<span style="background:#D96524;color:#fff;font-weight:800;font-size:14px;padding:7px 16px;border-radius:99px">' + esc(blk.badge) + '</span>' +
+          '<span style="font-family:\'Secular One\';font-size:clamp(44px,12vw,88px);color:#F7E6C9;line-height:.78">' + esc(blk.time) + '</span>' +
+        '</div>' +
+        '<div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:16px;align-items:flex-start">' + photo +
+          '<div style="flex:1;min-width:240px">' +
+            '<h3 style="margin:0;font-family:\'Secular One\';font-weight:400;font-size:clamp(24px,5vw,38px);line-height:1.08;color:#fff" dir="rtl">' + esc(s.title) + '</h3>' +
+            '<div style="font-weight:800;margin-top:8px;font-size:16px;color:#F7E6C9">' + esc(s.speakerName) + '</div>' +
+            '<div style="font-size:13px;opacity:.82">' + esc(s.speakerBio) + '</div>' +
+            '<p style="margin:12px 0 0;font-size:15.5px;line-height:1.66;opacity:.95;text-wrap:pretty">' + esc(s.subtitle) + '</p>' +
+          '</div>' +
+        '</div>' + quote +
+      '</div>' +
+    '</div>';
+  }
+
+  function renderSessionsBlock(blk) {
+    var kicker = blk.hasKicker ? '<div style="margin-top:4px;font-weight:700;font-size:13.5px;color:#7F8F6A;letter-spacing:.02em">' + esc(blk.kicker) + '</div>' : '';
+    var cards = blk.sessions.map(renderSessionCard).join('');
+    return '' +
+    '<div class="mk-block">' +
+      '<div class="mk-numwrap">' +
+        '<div style="font-family:\'Secular One\';font-size:clamp(48px,9vw,78px);line-height:.82;color:' + esc(blk.numeralColor) + '">' + esc(blk.time) + '</div>' + kicker +
+      '</div>' +
+      '<div class="mk-cards ' + esc(blk.gridClass) + '">' + cards + '</div>' +
+    '</div>';
+  }
+
+  function renderDivider(blk) {
+    var end = blk.hasEnd ? '–' + esc(blk.end) : '';
+    return '' +
+    '<div style="max-width:820px;margin:0 auto;width:100%;display:flex;align-items:center;gap:14px;padding:6px 4px">' +
+      '<span style="font-family:\'Secular One\';font-size:15px;color:#7F8F6A;min-width:110px;white-space:nowrap">' + esc(blk.time) + end + '</span>' +
+      '<span style="flex:1;height:2px;background:repeating-linear-gradient(90deg,rgba(127,143,106,.55) 0 6px,transparent 6px 13px)"></span>' +
+      '<span style="font-size:14px;font-weight:600;color:#5a6b48;text-align:end">' + esc(blk.title) + '</span>' +
+    '</div>';
+  }
+
+  function renderSchedule(D) {
+    var preTypes = ['info', 'optional'];
+    var preRaw = D.schedule.filter(function (b) { return preTypes.indexOf(b.type) >= 0; });
+    var preRows = preRaw.slice().sort(function (a, b) { return a.time < b.time ? -1 : (a.time > b.time ? 1 : 0); }).map(function (b) {
+      var sub = b.subtitle ? '<div style="font-size:12.5px;opacity:.58">' + esc(b.subtitle) + '</div>' : '';
+      var opt = b.optional ? '<span style="font-size:11.5px;font-weight:700;color:#7F8F6A;background:rgba(127,143,106,.14);padding:3px 9px;border-radius:99px">למעוניינים</span>' : '';
+      return '<div style="display:flex;align-items:center;gap:14px;background:#F3F7F6;border:1px solid rgba(20,56,60,.07);border-radius:12px;padding:10px 16px">' +
+        '<span style="font-family:\'Secular One\';font-size:18px;color:#48A4AB;min-width:50px">' + esc(b.time) + '</span>' +
+        '<div style="flex:1"><div style="font-weight:700;font-size:15px">' + esc(b.title) + '</div>' + sub + '</div>' + opt +
+      '</div>';
+    }).join('');
+
+    var mainTypes = ['plenary', 'parallel', 'keynote', 'break', 'meal'];
+    var sessionIdx = 0;
+    var blocksHtml = D.schedule.filter(function (b) { return mainTypes.indexOf(b.type) >= 0; }).map(function (b) {
+      var isDivider = b.type === 'break' || b.type === 'meal';
+      var isKeynote = b.type === 'keynote';
+      var numeralColor = '#D96524';
+      if (!isDivider) { numeralColor = (sessionIdx % 2 === 0) ? '#D96524' : '#378C8F'; sessionIdx++; }
+      var sessions = (b.sessions || []).map(function (s) { return shapeSession(D, s, numeralColor); });
+      var blk = {
+        time: b.time, end: b.end || '', hasEnd: !!b.end,
+        title: b.title || '', kicker: b.kicker || '', hasKicker: !!b.kicker, badge: b.badge || '',
+        numeralColor: numeralColor, sessions: sessions,
+        gridClass: sessions.length > 1 ? 'mk-cards-multi' : '',
+        keynoteSession: isKeynote ? sessions[0] : null
+      };
+      if (isDivider) return renderDivider(blk);
+      if (isKeynote) return renderKeynote(D, blk);
+      return renderSessionsBlock(blk);
+    }).join('');
+
+    return '' +
+    '<section id="schedule" style="background:#fff;padding:54px 0 44px">' +
+      '<div style="max-width:1180px;margin:0 auto;padding:0 20px">' +
+        '<div data-reveal style="text-align:center;margin-bottom:6px">' +
+          '<div style="font-family:\'Secular One\';font-size:13px;color:#D96524;letter-spacing:.05em">התוכנית · 21.7</div>' +
+          '<h2 style="margin:6px 0 0;font-family:\'Secular One\';font-weight:400;font-size:clamp(34px,8vw,64px);color:#14383C">סדר היום</h2>' +
+        '</div>' +
+        '<div data-reveal style="max-width:760px;margin:20px auto 6px;display:flex;flex-direction:column;gap:8px">' + preRows + '</div>' +
+        '<div style="display:flex;flex-direction:column;gap:22px;margin-top:16px">' + blocksHtml + '</div>' +
+      '</div>' +
+    '</section>';
+  }
+
+  function renderBanquet(D) {
+    var b = D.schedule.filter(function (x) { return x.type === 'banquet'; })[0];
+    var f = D.schedule.filter(function (x) { return x.type === 'farbrengen'; })[0];
+    var ofer = byId(D.speakers, f.speaker_id);
+    var program = b.program.map(function (p, i) {
+      return '<div style="background:rgba(255,255,255,.94);color:#14383C;border-radius:18px;padding:20px;box-shadow:0 14px 30px rgba(120,45,10,.24)">' +
+        '<div style="font-family:\'Secular One\';font-size:26px;color:#D96524;line-height:1">' + esc(pad(i + 1)) + '</div>' +
+        '<div style="margin-top:8px;font-family:\'Secular One\';font-weight:400;font-size:20px;line-height:1.15">' + esc(p.title) + '</div>' +
+        '<div style="margin-top:6px;font-size:14px;line-height:1.5;opacity:.72">' + esc(p.subtitle) + '</div>' +
+      '</div>';
+    }).join('');
+
+    return '' +
+    '<section id="banquet" style="position:relative;background:linear-gradient(165deg,#D96524 0%,#E17937 68%,#c8551a 100%);color:#fff;overflow:hidden;padding:62px 20px 40px">' +
+      '<img src="assets/brand/parchment-farbrengen.png" alt="" aria-hidden="true" loading="lazy" style="position:absolute;top:-40px;inset-inline-end:-60px;width:min(48vw,340px);opacity:.28;mix-blend-mode:screen;pointer-events:none">' +
+      '<div style="position:relative;max-width:1040px;margin:0 auto">' +
+        '<div data-reveal style="text-align:center">' +
+          '<div style="font-family:\'Secular One\';font-size:clamp(48px,14vw,110px);line-height:.8;color:#F7E6C9;text-shadow:0 4px 20px rgba(120,45,10,.4)">' + esc(b.time) + '</div>' +
+          '<div style="margin-top:12px;font-size:clamp(18px,4vw,24px);font-weight:700;opacity:.95">' + esc(b.header_quote) + '</div>' +
+          '<h2 style="margin:8px 0 0;font-family:\'Secular One\';font-weight:400;font-size:clamp(38px,10vw,80px);line-height:.98;color:#fff">' + esc(b.theme) + '</h2>' +
+          '<div style="margin-top:8px;font-size:16.5px;font-weight:600;opacity:.92">' + esc(b.title) + ' · ' + esc(b.subtitle) + '</div>' +
+        '</div>' +
+        '<div class="mk-3col" data-reveal style="margin-top:34px">' + program + '</div>' +
+        '<div data-reveal style="margin-top:20px;text-align:center">' +
+          '<img src="assets/brand/hatneim-illustration.png" alt="צוות ׳התנעים׳ — חוויה תיאטרלית" loading="lazy" style="width:min(90vw,520px);height:auto;display:inline-block;filter:drop-shadow(0 20px 30px rgba(120,45,10,.3))">' +
+        '</div>' +
+        '<div data-reveal style="margin-top:8px;text-align:center;font-size:13px;font-weight:600;letter-spacing:.03em;opacity:.9;text-wrap:pretty">' + esc(b.dedication) + '</div>' +
+        '<div data-reveal style="position:relative;margin-top:36px;border-radius:22px;overflow:hidden;color:#14383C;box-shadow:0 20px 44px rgba(120,45,10,.3)">' +
+          '<img src="assets/brand/globe.jpg" alt="" aria-hidden="true" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">' +
+          '<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(247,238,220,.86),rgba(232,215,186,.9))"></div>' +
+          '<div style="position:relative;padding:28px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:20px">' +
+            '<div style="font-family:\'Secular One\';font-size:clamp(40px,11vw,74px);line-height:.8;color:#c8551a">' + esc(f.time) + '</div>' +
+            '<div style="flex:1;min-width:220px">' +
+              '<h3 style="margin:0;font-family:\'Secular One\';font-weight:400;font-size:clamp(24px,5vw,34px);color:#14383C">' + esc(f.title) + '</h3>' +
+              '<div style="margin-top:6px;font-family:\'Secular One\';font-size:20px;color:#378C8F;letter-spacing:.06em">' + esc(f.subtitle) + '</div>' +
+              '<div style="margin-top:12px;display:flex;align-items:center;gap:12px">' +
+                '<div aria-hidden="true" style="width:48px;height:48px;border-radius:99px;background:#378C8F;color:#fff;display:flex;align-items:center;justify-content:center;font-family:\'Secular One\';font-size:20px;flex:none">' + esc(ofer ? initials(ofer.name) : '') + '</div>' +
+                '<div><div style="font-weight:800;font-size:15px">' + esc(ofer ? ofer.name : '') + '</div><div style="font-size:12.5px;opacity:.66;line-height:1.4">' + esc(ofer ? ofer.bio : '') + '</div></div>' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+    '</section>';
+  }
+
+  function renderSpeakers(D) {
+    var cards = D.speakers.map(function (s) {
+      var av = s.photo
+        ? '<img src="' + esc(s.photo) + '" alt="' + esc(s.name) + '" loading="lazy" style="width:84px;height:84px;border-radius:99px;object-fit:cover;object-position:top;border:3px solid #DDF1F0;margin:0 auto;display:block">'
+        : '<div aria-hidden="true" style="width:84px;height:84px;border-radius:99px;background:#378C8F;color:#fff;display:flex;align-items:center;justify-content:center;font-family:\'Secular One\';font-size:34px;margin:0 auto">' + esc(initials(s.name)) + '</div>';
+      return '<div data-reveal style="text-align:center;background:#F7FAF9;border:1px solid rgba(20,56,60,.08);border-radius:18px;padding:18px 12px">' + av +
+        '<div style="margin-top:12px;font-weight:800;font-size:15.5px;line-height:1.2;color:#14383C" dir="rtl">' + esc(s.name) + '</div>' +
+        '<div style="margin-top:5px;font-size:12.5px;line-height:1.45;opacity:.62;text-wrap:pretty">' + esc(s.bio) + '</div>' +
+      '</div>';
+    }).join('');
+    return '' +
+    '<section id="speakers" style="background:#fff;padding:58px 20px 60px">' +
+      '<div style="max-width:1180px;margin:0 auto">' +
+        '<div data-reveal style="text-align:center;margin-bottom:30px">' +
+          '<div style="font-family:\'Secular One\';font-size:13px;color:#D96524;letter-spacing:.05em">מיטב המרצים</div>' +
+          '<h2 style="margin:6px 0 0;font-family:\'Secular One\';font-weight:400;font-size:clamp(34px,8vw,64px);color:#14383C">המרצים</h2>' +
+        '</div>' +
+        '<div class="mk-speakers">' + cards + '</div>' +
+      '</div>' +
+    '</section>';
+  }
+
+  function renderTestimonials(D) {
+    var dots = D.testimonials.map(function (t, i) {
+      return '<button type="button" data-action="t-dot" data-idx="' + i + '" aria-label="ציטוט ' + (i + 1) + '" style="width:10px;height:10px;padding:0;border:0;border-radius:99px;cursor:pointer;background:rgba(255,255,255,.35)"></button>';
+    }).join('');
+    return '' +
+    '<section style="position:relative;background:linear-gradient(160deg,#378C8F,#2f7c7f);color:#fff;overflow:hidden;padding:60px 20px 64px">' +
+      '<img src="assets/brand/watercolor-tree-2.png" alt="" aria-hidden="true" loading="lazy" style="position:absolute;bottom:-30px;inset-inline-start:-70px;width:min(40vw,280px);opacity:.28;pointer-events:none">' +
+      '<div style="position:relative;max-width:760px;margin:0 auto;text-align:center">' +
+        '<h2 data-reveal style="margin:0 0 6px;font-family:\'Secular One\';font-weight:400;font-size:clamp(30px,7vw,52px)">מה אומרים המשתתפים</h2>' +
+        '<div style="position:relative;margin-top:26px;min-height:230px" aria-live="polite">' +
+          '<div aria-hidden="true" style="font-family:\'Secular One\';font-size:90px;line-height:.5;color:rgba(154,199,195,.55);height:44px">״</div>' +
+          '<p id="mk-t-quote" style="margin:6px 0 0;font-size:clamp(19px,3.8vw,25px);line-height:1.6;font-weight:500;text-wrap:pretty"></p>' +
+          '<div id="mk-t-name" style="margin-top:20px;font-family:\'Secular One\';font-size:19px;color:#F7E6C9"></div>' +
+          '<div id="mk-t-role" style="font-size:14px;opacity:.82;margin-top:2px"></div>' +
+        '</div>' +
+        '<div style="display:flex;align-items:center;justify-content:center;gap:18px;margin-top:26px">' +
+          '<button type="button" data-action="t-prev" aria-label="הקודם" style="width:44px;height:44px;border-radius:99px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.1);color:#fff;font-size:20px;cursor:pointer">→</button>' +
+          '<div id="mk-t-dots" style="display:flex;gap:9px">' + dots + '</div>' +
+          '<button type="button" data-action="t-next" aria-label="הבא" style="width:44px;height:44px;border-radius:99px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.1);color:#fff;font-size:20px;cursor:pointer">←</button>' +
+        '</div>' +
+      '</div>' +
+    '</section>';
+  }
+
+  function renderRebbeQuotes(D) {
+    var basi = byId(D.quotes, 'basi-legani');
+    var toldos = byId(D.quotes, 'toldos-5752');
+    return '' +
+    '<section style="position:relative;background:#E8D7BA;color:#14383C;overflow:hidden;padding:0">' +
+      '<div class="mk-2col" style="gap:0;align-items:stretch">' +
+        '<div style="position:relative;min-height:300px;background:#14383C">' +
+          '<img src="assets/brand/rebbe-portrait-teal.png" alt="דיוקן כ״ק אדמו״ר מלך המשיח שליט״א" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block">' +
+          '<div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(232,215,186,0) 60%,rgba(232,215,186,.9) 100%)"></div>' +
+        '</div>' +
+        '<div style="padding:52px 26px 56px;display:flex;flex-direction:column;justify-content:center;gap:32px">' +
+          '<div data-reveal>' +
+            '<div style="font-family:\'Secular One\';font-size:13px;color:#c8551a;letter-spacing:.04em">' + esc(basi.source) + '</div>' +
+            '<p style="margin:10px 0 0;font-size:clamp(15px,2.6vw,17.5px);line-height:1.75;opacity:.9;text-wrap:pretty">' + esc(basi.text) + '</p>' +
+            '<div style="margin-top:12px;font-family:\'Secular One\';font-size:clamp(18px,3.4vw,23px);color:#378C8F;line-height:1.35">' + esc(basi.highlight) + '</div>' +
+          '</div>' +
+          '<div data-reveal style="border-top:1px solid rgba(20,56,60,.18);padding-top:26px">' +
+            '<div style="font-family:\'Secular One\';font-size:13px;color:#c8551a;letter-spacing:.04em">' + esc(toldos.source) + '</div>' +
+            '<p style="margin:10px 0 0;font-size:clamp(16px,3vw,20px);line-height:1.7;font-weight:500;text-wrap:pretty">' + esc(toldos.text) + '</p>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+    '</section>';
+  }
+
+  function renderGallery(D) {
+    var imgs = D.gallery.images.map(function (src) {
+      return '<div style="aspect-ratio:1;overflow:hidden;border-radius:14px;background:#DDF1F0">' +
+        '<img src="' + esc(src) + '" alt="תמונה מכנס קודם" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">' +
+      '</div>';
+    }).join('');
+    return '' +
+    '<section style="background:#fff;padding:56px 20px 40px">' +
+      '<div style="max-width:1180px;margin:0 auto">' +
+        '<h2 data-reveal style="margin:0 0 24px;font-family:\'Secular One\';font-weight:400;font-size:clamp(30px,7vw,52px);color:#14383C;text-align:center">' + esc(D.gallery.section_title) + '</h2>' +
+        '<div class="mk-gallery">' + imgs + '</div>' +
+        '<div style="margin-top:16px;text-align:center;font-size:13px;opacity:.55;font-weight:500">' + esc(D.gallery.photo_credit) + '</div>' +
+      '</div>' +
+    '</section>';
+  }
+
+  function renderFaq(D) {
+    var items = D.faq.items.map(function (f, i) {
+      return '<div style="background:#fff;border:1px solid rgba(20,56,60,.08);border-radius:14px;overflow:hidden">' +
+        '<button type="button" data-action="faq" data-idx="' + i + '" aria-expanded="false" style="width:100%;text-align:start;background:transparent;border:0;cursor:pointer;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-family:\'Heebo\';font-weight:700;font-size:16.5px;color:#14383C">' +
+          '<span style="flex:1">' + esc(f.q) + '</span>' +
+          '<span class="mk-faq-icon" aria-hidden="true" style="font-family:\'Secular One\';font-size:22px;color:#D96524;line-height:1;transition:transform .2s">+</span>' +
+        '</button>' +
+        '<div class="mk-faq-a" hidden style="padding:0 18px 18px;font-size:15px;line-height:1.7;color:#14383C;opacity:.82;text-wrap:pretty">' + esc(f.a) + '</div>' +
+      '</div>';
+    }).join('');
+    return '' +
+    '<section id="faq" style="background:#DDF1F0;padding:60px 20px 64px">' +
+      '<div style="max-width:800px;margin:0 auto">' +
+        '<div data-reveal style="text-align:center;margin-bottom:28px">' +
+          '<h2 style="margin:0;font-family:\'Secular One\';font-weight:400;font-size:clamp(32px,7.5vw,58px);color:#14383C">' + esc(D.faq.section_title) + '</h2>' +
+          '<p style="margin:8px 0 0;font-size:16px;opacity:.7;font-weight:500">' + esc(D.faq.section_intro) + '</p>' +
+        '</div>' +
+        '<div style="display:flex;flex-direction:column;gap:10px">' + items + '</div>' +
+      '</div>' +
+    '</section>';
+  }
+
+  function renderGettingThere(D) {
+    var E = D.event;
+    var cards = E.getting_there.map(function (g) {
+      return '<div style="background:#F7FAF9;border:1px solid rgba(20,56,60,.08);border-radius:16px;padding:20px">' +
+        '<div style="font-family:\'Secular One\';font-weight:400;font-size:19px;color:#14383C">' + esc(g.mode) + '</div>' +
+        '<div style="margin-top:8px;font-size:14.5px;line-height:1.6;opacity:.78;text-wrap:pretty">' + esc(g.details) + '</div>' +
+      '</div>';
+    }).join('');
+    return '' +
+    '<section style="background:#fff;padding:58px 20px 60px">' +
+      '<div style="max-width:1080px;margin:0 auto">' +
+        '<div data-reveal style="text-align:center;margin-bottom:12px">' +
+          '<h2 style="margin:0;font-family:\'Secular One\';font-weight:400;font-size:clamp(30px,7vw,52px);color:#14383C">איך מגיעים</h2>' +
+          '<div style="margin-top:8px;font-size:16px;font-weight:600;color:#378C8F">' + esc(E.venue.name) + ' · ' + esc(E.venue.address) + '</div>' +
+        '</div>' +
+        '<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:20px 0 30px">' +
+          '<a href="' + esc(wazeUrl(D)) + '" target="_blank" rel="noopener" style="background:#378C8F;color:#fff;font-weight:800;font-size:15px;padding:12px 24px;border-radius:99px">פתח בוויז</a>' +
+          '<a href="' + esc(mapsUrl(D)) + '" target="_blank" rel="noopener" style="background:#DDF1F0;color:#14383C;font-weight:800;font-size:15px;padding:12px 24px;border-radius:99px;border:1px solid rgba(55,140,143,.3)">פתח ב-Google Maps</a>' +
+        '</div>' +
+        '<div class="mk-3col" data-reveal>' + cards + '</div>' +
+        '<p data-reveal style="max-width:760px;margin:26px auto 0;text-align:center;font-size:14.5px;line-height:1.7;opacity:.72;text-wrap:pretty">' + esc(E.venue.why_here) + '</p>' +
+        '<div data-reveal style="margin-top:22px;text-align:center">' +
+          '<a href="tel:' + esc(E.contact.hotline_tel) + '" style="display:inline-flex;align-items:center;gap:9px;font-family:\'Secular One\';font-size:clamp(22px,5vw,30px);color:#D96524" dir="ltr">' + esc(E.contact.hotline_display) + '</a>' +
+          '<div style="font-size:13.5px;opacity:.6;font-weight:500;margin-top:2px">' + esc(E.contact.hotline_label) + '</div>' +
+        '</div>' +
+      '</div>' +
+    '</section>';
+  }
+
+  function renderRegister(D) {
+    var E = D.event;
+    var perks = D.perks.map(function (p) {
+      return '<div style="background:rgba(255,255,255,.94);color:#14383C;border-radius:16px;padding:18px">' +
+        '<div style="font-weight:800;font-size:16px;line-height:1.3;color:#c8551a">' + esc(p.label) + '</div>' +
+        '<div style="margin-top:6px;font-size:13.5px;line-height:1.5;opacity:.72">' + esc(p.details) + '</div>' +
+      '</div>';
+    }).join('');
+    return '' +
+    '<section id="register" style="position:relative;background:linear-gradient(160deg,#D96524,#E17937);color:#fff;overflow:hidden;padding:64px 20px 68px;text-align:center">' +
+      '<div style="position:relative;max-width:900px;margin:0 auto">' +
+        '<h2 data-reveal style="margin:0;font-family:\'Secular One\';font-weight:400;font-size:clamp(36px,9vw,72px);line-height:1;text-shadow:0 3px 16px rgba(120,45,10,.35)">מצטרפים השנה?</h2>' +
+        '<p data-reveal style="margin:12px 0 0;font-size:clamp(17px,3.6vw,21px);font-weight:600;opacity:.95">' + esc(E.subtitle) + ' · 21.7 · ' + esc(E.venue.city) + '</p>' +
+        '<a href="' + esc(E.registration.tickets_url) + '" target="_blank" rel="noopener" data-reveal style="margin-top:24px;display:inline-flex;align-items:center;gap:10px;background:#fff;color:#D96524;font-weight:800;font-size:21px;padding:17px 52px;border-radius:99px;box-shadow:0 16px 36px rgba(120,45,10,.4)">' + esc(E.registration.cta_label) + ' <span style="font-size:16px">←</span></a>' +
+        '<div class="mk-3col" data-reveal style="margin-top:38px;text-align:start">' + perks + '</div>' +
+      '</div>' +
+    '</section>';
+  }
+
+  function renderSponsors(D) {
+    var sponsor = D.sponsors[0];
+    var orgs = D.event.organizers.map(function (o) {
+      return '<div style="display:flex;align-items:center;gap:12px;background:#fff;border:1px solid rgba(20,56,60,.08);border-radius:14px;padding:12px 18px">' +
+        '<img src="' + esc(o.logo) + '" alt="' + esc(o.name) + '" loading="lazy" style="height:56px;width:auto;border-radius:6px;display:block">' +
+        '<div style="text-align:start"><div style="font-weight:800;font-size:14.5px;color:#14383C">' + esc(o.name) + '</div><div style="font-size:12px;opacity:.6">' + esc(o.role) + '</div></div>' +
+      '</div>';
+    }).join('');
+    return '' +
+    '<section style="background:#F7FAF9;padding:44px 20px 48px">' +
+      '<div style="max-width:900px;margin:0 auto;text-align:center">' +
+        '<div data-reveal style="font-family:\'Secular One\';font-size:26px;color:#14383C">' + esc(sponsor.name) + '</div>' +
+        '<div data-reveal style="font-size:15px;font-weight:600;color:#378C8F;margin-top:2px">' + esc(sponsor.tagline) + '</div>' +
+        '<div data-reveal style="margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:22px">' + orgs + '</div>' +
+      '</div>' +
+    '</section>';
+  }
+
+  function renderFooter(D) {
+    var E = D.event;
+    return '' +
+    '<footer style="position:relative;background:#14383C;color:#F7F3EA;padding:0 0 26px">' +
+      '<img src="assets/brand/grass-strip.png" alt="" aria-hidden="true" loading="lazy" style="display:block;width:100%;height:auto;margin-top:-1px;transform:translateY(-40%);pointer-events:none">' +
+      '<div style="max-width:1080px;margin:-30px auto 0;padding:0 20px;text-align:center;position:relative">' +
+        '<div style="font-family:\'Secular One\';font-size:clamp(20px,4.6vw,30px);color:#F7E6C9;line-height:1.4;text-wrap:pretty">' + esc(E.religious_framing.yechi) + '</div>' +
+        '<div style="margin-top:26px;padding-top:24px;border-top:1px solid rgba(247,243,234,.16);font-size:14px;line-height:1.7;opacity:.82;text-wrap:pretty">' + esc(E.dedication) + '</div>' +
+        '<div style="margin-top:22px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 22px;font-size:14.5px">' +
+          '<a href="tel:' + esc(E.contact.hotline_tel) + '" style="color:#9AC7C3;font-weight:700" dir="ltr">' + esc(E.contact.hotline_display) + '</a>' +
+          '<a href="mailto:' + esc(E.contact.email) + '" style="color:#9AC7C3;font-weight:700">' + esc(E.contact.email) + '</a>' +
+          '<a href="' + esc(E.registration.info_site) + '" target="_blank" rel="noopener" style="color:#9AC7C3;font-weight:700">hisachdus.co.il</a>' +
+        '</div>' +
+        '<div style="margin-top:22px;font-size:13px;opacity:.7">' +
+          '<a href="' + esc(D.site.footer_credit.url) + '" target="_blank" rel="noopener" style="color:#F7E6C9;font-weight:600">' + esc(D.site.footer_credit.text_he) + '</a>' +
+        '</div>' +
+      '</div>' +
+    '</footer>';
+  }
+
+  function renderStickyCta(D) {
+    return '' +
+    '<div class="mk-sticky-cta" id="mk-sticky">' +
+      '<div style="background:rgba(20,56,60,.97);backdrop-filter:blur(8px);padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;gap:12px;box-shadow:0 -8px 24px rgba(0,0,0,.22)">' +
+        '<div style="flex:1;min-width:0">' +
+          '<div style="font-family:\'Secular One\';font-size:15px;color:#F7E6C9;line-height:1">מקושר בכל 15</div>' +
+          '<div style="font-size:12px;opacity:.8;color:#fff">21.7 · אשקלון</div>' +
+        '</div>' +
+        '<a href="' + esc(D.event.registration.tickets_url) + '" target="_blank" rel="noopener" style="background:#D96524;color:#fff;font-weight:800;font-size:16px;padding:12px 28px;border-radius:99px;white-space:nowrap">' + esc(D.event.registration.cta_label) + '</a>' +
+      '</div>' +
+    '</div>';
+  }
+
+  /* ---------- interactivity ---------- */
+
+  function wireUp(D) {
+    var app = document.getElementById('app');
+
+    // Graceful image fallback: if a brand/asset image is missing, collapse it
+    // (or hide the hero logo card) so the layout still reads as intentional
+    // rather than showing a broken-image icon.
+    app.addEventListener('error', function (ev) {
+      var t = ev.target;
+      if (!t || t.tagName !== 'IMG') return;
+      var src = t.getAttribute('src') || '';
+      if (src.indexOf('logo-main') >= 0) {
+        var card = document.getElementById('mk-logo-card');
+        if (card) card.style.display = 'none';
+      } else {
+        t.style.display = 'none';
+      }
+    }, true);
+
+    // Countdown, updated in place every second
+    var cd = document.getElementById('mk-countdown');
+    function tick() { if (cd) cd.innerHTML = renderCountdownInner(D, Date.now()); }
+    tick();
+    setInterval(tick, 1000);
+
+    // Testimonials carousel
+    var tIndex = 0;
+    var T = D.testimonials;
+    var qEl = document.getElementById('mk-t-quote');
+    var nEl = document.getElementById('mk-t-name');
+    var rEl = document.getElementById('mk-t-role');
+    var dotsWrap = document.getElementById('mk-t-dots');
+    function paintT() {
+      var i = ((tIndex % T.length) + T.length) % T.length;
+      if (qEl) qEl.textContent = T[i].quote;
+      if (nEl) nEl.textContent = T[i].name;
+      if (rEl) rEl.textContent = T[i].role;
+      if (dotsWrap) {
+        var btns = dotsWrap.querySelectorAll('button');
+        for (var k = 0; k < btns.length; k++) btns[k].style.background = (k === i) ? '#F7E6C9' : 'rgba(255,255,255,.35)';
+      }
+    }
+    paintT();
+
+    // Delegated clicks
+    app.addEventListener('click', function (ev) {
+      var el = ev.target.closest('[data-action]');
+      if (!el) return;
+      var action = el.getAttribute('data-action');
+      if (action === 'ics') { downloadICS(D); }
+      else if (action === 't-next') { tIndex++; paintT(); }
+      else if (action === 't-prev') { tIndex--; paintT(); }
+      else if (action === 't-dot') { tIndex = parseInt(el.getAttribute('data-idx'), 10); paintT(); }
+      else if (action === 'faq') {
+        var ans = el.parentNode.querySelector('.mk-faq-a');
+        var icon = el.querySelector('.mk-faq-icon');
+        var open = el.getAttribute('aria-expanded') === 'true';
+        el.setAttribute('aria-expanded', open ? 'false' : 'true');
+        if (ans) ans.hidden = open;
+        if (icon) icon.style.transform = open ? 'none' : 'rotate(45deg)';
+      }
+    });
+
+    // Sticky mobile CTA
+    var sticky = document.getElementById('mk-sticky');
+    function onScroll() {
+      var y = window.scrollY || document.documentElement.scrollTop;
+      if (sticky) sticky.classList.toggle('mk-show', y > 640);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  function render(D) {
+    document.title = D.event.name + ' ' + D.event.edition + ' · ' + D.event.subtitle;
+    var html =
+      renderHeader(D) +
+      renderHero(D) +
+      renderAbout(D) +
+      renderTracks(D) +
+      renderSchedule(D) +
+      renderBanquet(D) +
+      renderSpeakers(D) +
+      renderTestimonials(D) +
+      renderRebbeQuotes(D) +
+      renderGallery(D) +
+      renderFaq(D) +
+      renderGettingThere(D) +
+      renderRegister(D) +
+      renderSponsors(D) +
+      renderFooter(D) +
+      renderStickyCta(D);
+    document.getElementById('app').innerHTML = html;
+    wireUp(D);
+  }
+
+  function showError(detail) {
+    var boot = document.getElementById('mk-boot');
+    if (!boot) return;
+    boot.innerHTML =
+      '<div style="font-family:\'Secular One\';font-size:26px;color:#D96524">מקושר בכל 15</div>' +
+      '<div style="font-weight:700;font-size:17px;max-width:560px;line-height:1.7">לא הצלחנו לטעון את תוכן האתר (<span dir="ltr">' + esc(DATA_URL) + '</span>).</div>' +
+      '<div style="font-weight:500;font-size:15px;max-width:560px;line-height:1.9;opacity:.8">אם פתחתם את הקובץ ישירות מהדיסק, הדפדפן חוסם טעינת JSON. יש להריץ שרת מקומי מתיקיית האתר, למשל:<br><code>npx serve</code> &nbsp;או&nbsp; <code>python -m http.server</code><br>ואז לגלוש אל הכתובת שמוצגת.</div>' +
+      '<div style="font-size:12.5px;opacity:.5;direction:ltr">' + esc(detail || '') + '</div>';
+  }
+
+  function boot() {
+    fetch(DATA_URL, { cache: 'no-cache' })
+      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(function (D) { render(D); })
+      .catch(function (err) { showError(err && err.message); });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+})();
+</script>
+</body>
+</html>
