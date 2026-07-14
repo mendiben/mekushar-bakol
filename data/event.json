@@ -280,20 +280,20 @@
     },
     {
       "id": "aviel-ben-david",
-      "name": "__ צריך למלא שם בעברית __",
-      "bio": "__ צריך למלא תיאור __",
+      "name": "אביאל בן דוד",
+      "bio": "מרצה פיננסי לזוגות צעירים",
       "photo": "assets/speakers/aviel-ben-david.jpg"
     },
     {
       "id": "gil-orian",
-      "name": "__ צריך למלא שם בעברית __",
-      "bio": "__ צריך למלא תיאור __",
+      "name": "הרב דוד גיל אוריאן",
+      "bio": "ראש ישיבת 'אור מנחם' חב"ד באשקלון ומשפיע ומו"צ בנחלת הר חב"ד",
       "photo": "assets/speakers/gil-orian.jpg"
     },
     {
       "id": "michael-weigel",
-      "name": "__ צריך למלא שם בעברית __",
-      "bio": "__ צריך למלא תיאור __",
+      "name": "הרב מיכאל דוד וויגל",
+      "bio": "שחקן",
       "photo": "assets/speakers/michael-weigel.jpg"
     }
   ],
